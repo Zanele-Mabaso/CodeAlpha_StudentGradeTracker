@@ -38,7 +38,13 @@ public class Student
     {
       throw new IllegalArgumentException("Name cannot be null or empty");
     }
-    this.name = name.trim();                 
+    String trimmedName = name.trim();
+    if (!trimmedName.matches("[\\p{L}]+(?:[ '-][\\p{L}]+)*"))
+    {
+      throw new IllegalArgumentException(
+          "Name can contain letters, spaces, hyphens, and apostrophes only");
+    }
+    this.name = trimmedName;
   }
 
   public void setScore(double score)
@@ -51,16 +57,17 @@ public class Student
   }
   public void setStudentId(String studentId)
   {
-    if(studentId == null || studentId.isBlank())
+    if (studentId == null || studentId.isBlank())
     {
       throw new IllegalArgumentException("Student ID cannot be null or empty");
     }
-    else if(studentId.length() > 7)
-    {
-      throw new IllegalArgumentException("Student ID cannot be greater than 7");
 
+    String trimmedId = studentId.trim();
+    if (trimmedId.length() != 7)
+    {
+      throw new IllegalArgumentException("Student ID must be exactly 7 characters");
     }
-    this.studentId=studentId;
+
+    this.studentId = trimmedId;
   }
 }
-
