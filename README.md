@@ -1,3 +1,27 @@
+
+Student Grade Tracker
+
+A desktop app for recording students and their scores, built with Java and
+JavaFX as Task 1 of the CodeAlpha Java Programming internship.
+
+ Features
+
+- Add a student with a name, a 7-character ID, and a score from 0 to 100
+- Clear error messages for invalid input
+- Duplicate student IDs are rejected
+- View all students in a list
+- [Add average, highest and lowest score here only if they work]
+
+ How to run
+
+Requires a JDK and Apache Maven. JavaFX is downloaded automatically.
+
+```bash
+git clone https://github.com/Zanele-Mabaso/CodeAlpha_StudentGradeTracker.git
+cd CodeAlpha_StudentGradeTracker
+mvn clean javafx:run
+``` 
+ 
  Who it's for and what problem it solves
 
 A simple desktop tool for recording students' scores
